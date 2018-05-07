@@ -56,9 +56,6 @@ public class Equipment {
     @Column(length = 1)
     private Long manageLevel; //管理等级
 
-    @Column(length = 1, columnDefinition = "default 1")
-    private String running; //是否运行
-
     @Column(scale = 2)
     private Double purchasePrice; //采购价格
 
@@ -72,7 +69,7 @@ public class Equipment {
     @Column(length = 2)
     private Long expectedYear; //预计年限
 
-    @Column(length = 1, columnDefinition = "default 1")
+    @Column(length = 1)
     private String status; //默认为正常  0不正常 1正常  2报修   3报废
 
 }
