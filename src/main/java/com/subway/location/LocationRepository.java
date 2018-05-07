@@ -43,7 +43,7 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
      * @param authKey 根据授权码查询授权结构
      * @return
      */
-    @Query("SELECT  l.id,l.locCode, l.locDesc, '', l.parentId FROM Location l where l.locCode like :authKey ")
+    @Query("SELECT  l.id,l.locCode, l.locDesc, '', l.parent.id FROM Location l where l.locCode like :authKey ")
     List<Object> findTree(@Param("authKey") String authKey);
 
 

@@ -21,19 +21,14 @@ public class Location implements java.io.Serializable {
     private String locCode;//位置编码
 
     @Column(length = 100)
-    private String locName;//位置描述
+    private String locName;//位置名称
 
     @Column(length = 100)
     private String locDesc;//位置描述
 
-    @Column(length = 1, nullable = false)
-    private Long locLevel;
-
-    @Column(length = 1)
-    private String locType;  //位置类型  1段区 2站区
-
-    @Column(length = 5)
-    private Long parentId;
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id", referencedColumnName = "id")
+    private Location parent;  //所属位置
 
     @Column(length = 20, nullable = false) //默认位置正常
     private String authKey;//状态

@@ -8,6 +8,5 @@
 <th data-column-id="productFactory" data-width="5%">生产厂商</th>
 <th data-column-id="eqClass" data-width="10%"  data-converter="showEqClassName">设备分类</th>
 <th data-column-id="location" data-width="10%" data-converter="showShortLocName">设备位置</th>
-<th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="10%">编辑|删除</th>
-<th data-column-id="qrCode" data-formatter="qrCode" data-sortable="false" data-width="6%">二维码</th>
+<th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="15%">编辑|删除|二维码</th>
 
