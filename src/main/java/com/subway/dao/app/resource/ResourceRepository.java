@@ -32,7 +32,7 @@ public interface ResourceRepository extends JpaRepository<Resource, Long> {
     /**
      * 根据URL模糊查询
      */
-    List<Resource> findByResourceUrlStartingWithAndStaticFlag(String resourceUrl,String  staticFlag);
+    List<Resource> findByResourceUrlStartingWithAndStaticFlag(String resourceUrl,String staticFlag);
 
     /**
      * 根据id查询数据资源

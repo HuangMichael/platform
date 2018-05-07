@@ -40,9 +40,11 @@ public class Resource {
 
     @Column(length = 1)
     private String status;
+
     private Long sortNo; //排序
+
     @Column(length = 1)
-    private boolean staticFlag;
+    private String staticFlag;
 
     @JsonBackReference("roleList")
     @ManyToMany(fetch = FetchType.LAZY)
