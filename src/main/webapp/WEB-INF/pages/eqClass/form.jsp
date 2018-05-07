@@ -10,7 +10,7 @@
                     <input class="form-control" id="id" name="id" v-model="eqClass.id" type="hidden"/>
                     <input class="form-control" id="name" name="name" v-model="eqClass.name" required/>
                 </div>
-                <label for="hasChild" class="col-md-2 control-label">是否有子分类</label>
+                <label for="hasChild" class="col-md-2 control-label">有子分类</label>
                 <div class="col-md-4">
                     <select class="form-control" id="hasChild" v-model="eqClass.hasChild" style="width:100%">
                         <option value="1" selected>有效</option>
