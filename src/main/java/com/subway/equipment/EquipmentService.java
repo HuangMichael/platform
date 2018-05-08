@@ -1,15 +1,10 @@
 package com.subway.equipment;
 
-import java.util.List;
-import java.util.Map;
-
-import com.subway.service.app.BaseService;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.subway.service.commonData.CommonDataService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 import com.subway.object.ReturnObject;
+import com.subway.service.app.BaseService;
+import com.subway.service.commonData.CommonDataService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import static com.subway.utils.ConstantUtils.*;
 
@@ -24,22 +19,11 @@ import static com.subway.utils.ConstantUtils.*;
 @Service
 public class EquipmentService extends BaseService {
 
-
     @Autowired
     EquipmentRepository equipmentRepository;
 
-
     @Autowired
     CommonDataService commonDataService;
-
-    public List<Equipment> findAll() {
-        return equipmentRepository.findAll();
-    }
-
-
-    public Page<Equipment> findAll(Pageable pageable) {
-        return equipmentRepository.findAll(pageable);
-    }
 
 
     /**
@@ -64,6 +48,10 @@ public class EquipmentService extends BaseService {
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     public Equipment findById(Long id) {
         return equipmentRepository.getOne(id);
     }

@@ -69,6 +69,10 @@ public class Equipment {
     @Column(length = 2)
     private Long expectedYear; //预计年限
 
+    @Column(length = 20)
+    private String authKey;
+
+
     @Column(length = 1)
     private String status; //默认为正常  0不正常 1正常  2报修   3报废
 

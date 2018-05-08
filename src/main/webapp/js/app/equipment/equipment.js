@@ -40,7 +40,7 @@ $(function () {
 
 
     searchModel = [
-        {"param": "location", "paramDesc": "位置"},
+        {"param": "locName", "paramDesc": "设备位置"},
         {"param": "description", "paramDesc": "设备描述"},
         {"param": "status", "paramDesc": "状态"}
     ];
