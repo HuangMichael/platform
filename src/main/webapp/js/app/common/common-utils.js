@@ -389,7 +389,7 @@ var showRunning = function (value) {
  * @param value
  */
 var showEqName = function (value) {
-    return value ? value["description"] : "无";
+    return value ? value["location"]["description"]+value["description"] : "无";
 
 }
 
@@ -443,6 +443,16 @@ var showEqClassName = function (value) {
 
 }
 
+
+
+/**
+ *
+ * @param value
+ */
+var showEqName = function (value) {
+    return value ? value["description"] : "无";
+
+}
 
 /**
  *
