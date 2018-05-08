@@ -26,7 +26,7 @@
                         <div class="col-md-6">
                             <div id="chart3" style="height:350px;width: 90%"></div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div id="chart2" style="height:350px;width: 90%"></div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
 
             var option1 = {
                 title: {
-                    text: '报修按设备类型统计',
+                    text: '按设备类型统计数量',
                     subtext: '2018-03',
                     left: 'center'
                 },
@@ -81,7 +81,7 @@
                     show: false,
                     bottom: 10,
                     left: 'center',
-                    data: ['标识灯箱', '门禁', '热水器', '门锁', '空调']
+                    data: ['自动取款机', '自动存取款一体机', '多媒体自助查询终端', '网银机', '电话银行']
                 },
                 series: [
                     {
@@ -92,7 +92,7 @@
                         data: [
                             {
                                 value: 1548,
-                                name: '空调',
+                                name: '自动取款机',
                                 label: {
                                     normal: {
                                         formatter: [
@@ -177,10 +177,10 @@
                                     }
                                 }
                             },
-                            {value: 535, name: '门锁'},
-                            {value: 510, name: '热水器'},
-                            {value: 634, name: '门禁'},
-                            {value: 735, name: '标识灯箱'}
+                            {value: 535, name: '自动存取款一体机'},
+                            {value: 510, name: '多媒体自助查询终端'},
+                            {value: 634, name: '网银机'},
+                            {value: 735, name: '电话银行'}
                         ],
                         itemStyle: {
                             emphasis: {
@@ -196,7 +196,7 @@
 
             var option2 = {
                 title: {
-                    text: '维修单状态按线别统计',
+                    text: '按设备状态统计',
                     subtext: '2018-03'
                 },
                 tooltip: {
@@ -220,7 +220,7 @@
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['2号线', '8号线', '10号线', '13号线']
+                        data: ['高台支行', '临泽支行', '甘州区支行', '肃南支行']
                     }
                 ],
                 yAxis: [
@@ -261,7 +261,7 @@
 
             var option3 = {
                 title: {
-                    text: '最近三个月报修完成情况统计',
+                    text: '设备使用情况统计',
                     subtext: '2018-03'
                 },
                 tooltip: {
