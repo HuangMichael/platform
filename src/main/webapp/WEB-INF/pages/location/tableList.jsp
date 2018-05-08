@@ -5,7 +5,6 @@
 <th data-column-id="locName" data-width="20%">位置名称</th>
 <th data-column-id="locDesc" data-width="25%">位置描述</th>
 <th data-column-id="status" data-width="5%" data-converter="showStatus">状态</th>
-<th data-column-id="reportFix" data-formatter="reportFix" data-sortable="false" data-width="5%">报修</th>
 <th data-column-id="commands" data-formatter="commands"
     data-sortable="false" data-width="8%">编辑|删除
 </th>

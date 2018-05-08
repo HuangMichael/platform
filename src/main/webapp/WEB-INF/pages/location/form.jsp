@@ -17,16 +17,6 @@
 
             </div>
             <div class="form-group">
-                <label for="locLevel" class="col-md-2 control-label">位置级别</label>
-                <div class="col-md-4">
-                    <input class="form-control" id="locLevel" name="locLevel" v-model="location.locLevel" required/>
-                </div>
-                <label for="locType" class="col-md-2 control-label">位置类型</label>
-                <div class="col-md-4">
-                    <input class="form-control" id="locType" name="locType" v-model="location.locType" required/>
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="parentId" class="col-md-2 control-label">上级位置</label>
                 <div class="col-md-4">
                     <input class="form-control" id="parentId" name="parentId" v-model="location.parentId"/>
