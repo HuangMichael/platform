@@ -60,7 +60,7 @@ $(function () {
             "commands": function (column, row) {
                 return "<button type='button' class='btn btn-xs btn-default command-edit' data-row-id='" + row.id + "' onclick='edit(" + row.id + ")'><span class='fa fa-pencil'></span></button> " +
                     "<button type='button' class='btn btn-xs btn-default command-delete' data-row-id='" + row.id + "' onclick='del(" + row.id + ")'><span class='fa fa-trash-o'></span></button>" +
-                    "<button type='button' class='btn btn-xs btn-default command-barcode' data-row-id='" + row.id + "' onclick='del(" + row.id + ")'><span class='fa fa-barcode'></span></button>";
+                    "<button type='button' class='btn btn-xs btn-default command-barcode' data-row-id='" + row.id + "' onclick='showQrCode(" + row.id + ")'><span class='fa fa-barcode'></span></button>";
             }
         },
         converters: {
@@ -80,8 +80,8 @@ $(function () {
             , showShortLocName: {
                 to: showShortLocName
             }
-            ,showEqClassName:{
-                to:showEqClassName
+            , showEqClassName: {
+                to: showEqClassName
             }
         }
     });
@@ -94,7 +94,6 @@ $(function () {
         }
     });
     initSelect();
-
 
 
     validateForm.call(validateOptions);
@@ -235,4 +234,29 @@ function reportFixData(form) {
         $("#reportFixModal").modal("hide");
         showMessage(data["result"], data["resultDesc"]);
     });
+}
+
+
+/**
+ *
+ * @param id
+ */
+function showQrCode(id) {
+    $("#qrCode").html("");
+    var object = findByIdAndObjectName(id, mainObject);
+    var str = "设备编码:" + object["eqCode"] + "\n";
+    str += "设备名称:" + object["description"] + "\n";
+    str += "设备位置:" + object["location"]["locName"] + "\n";
+    str += "设备分类:" + object["eqClass"]["name"] + "\n";
+    $("#qrCode").qrcode(
+        {
+            render: "canvas", //也可以替换为table
+            foreground: "#2b2b2b",
+            background: "#FFF",
+            text: utf16to8(str),
+            src: '/img/logo/logo.png'
+
+        }
+    );
+    $("#qrCodeModal").modal("show");
 }

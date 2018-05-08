@@ -76,17 +76,17 @@
     </div><!-- /.modal -->
 </div>
 
-<div class="modal fade " id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+<div class="modal fade " id="qrCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span>&times;</span>
                 </button>
-                <h4 class="modal-title pull-left" id="myModalLabel2">请选择文件</h4>
+                <h4 class="modal-title pull-left" id="myModalLabel2">请打印二维码</h4>
             </div>
             <div class="modal-body">
-                <div id="dropZone" class="dropzone"></div>
+                <div id="qrCode" ></div>
             </div>
         </div>
     </div>
