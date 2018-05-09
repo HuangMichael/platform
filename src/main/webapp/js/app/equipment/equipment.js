@@ -254,9 +254,18 @@ function showQrCode(id) {
             foreground: "#2b2b2b",
             background: "#FFF",
             text: utf16to8(str),
-            src: '/img/logo/logo.png'
-
+            src: '/img/logo/logo.png',
+            height: 160,
+            width: 160,
+            typeNumber: -1,			//计算模式
+            correctLevel: QRErrorCorrectLevel.M//纠错等级
         }
     );
     $("#qrCodeModal").modal("show");
+}
+
+
+function printQrCode() {
+
+
 }

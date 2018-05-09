@@ -86,8 +86,18 @@
                 <h4 class="modal-title pull-left" id="myModalLabel2">请打印二维码</h4>
             </div>
             <div class="modal-body">
-                <div id="qrCode" ></div>
+                <div id="qrCode"  style="align-content: center"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button id="printBtn" name="printBtn"
+                            class="btn btn-danger"> 打印
+                    </button>
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>

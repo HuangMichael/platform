@@ -20,7 +20,8 @@
 <script type="text/javascript" src="/js/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
 <script type="text/javascript" src="/js/bootstrapvalidator/src/js/language/zh_CN.js"></script>
 <script type="text/javascript" src="/js/bootbox/bootbox.min.js"></script>
-<script type="text/javascript" src="/js/jquery.qrCode/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="/js/jquery.qrCode/excanvas.js"></script>
+<script type="text/javascript" src="/js/jquery.qrCode/qrcode.js"></script>
 <script type="text/javascript" src="/js/app/common/common-crud.js"></script>
 
 
