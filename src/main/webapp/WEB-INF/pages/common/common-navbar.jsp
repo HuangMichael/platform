@@ -6,7 +6,7 @@
         <div class="navbar-brand">
             <!-- COMPANY LOGO -->
             <a>
-                <img src="/img/logo/logo.png" alt="${sessionScope.sysName}" class="img-responsive">
+                <img src="/img/logo/head_logo.png" alt="${sessionScope.sysName}" class="img-responsive"  style="width: 300px;height:45px">
             </a>
             <div class="visible-xs">
                 <a onclick="javascript:void(0)" class="team-status-toggle switcher btn dropdown-toggle">

@@ -6,6 +6,7 @@ import com.subway.dao.app.resource.VRoleAuthViewRepository;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.app.resoure.VRoleAuthView;
 import com.subway.domain.user.User;
+import com.subway.object.ReturnObject;
 import com.subway.role.Role;
 import com.subway.role.RoleService;
 import com.subway.service.app.ResourceService;
@@ -167,6 +168,18 @@ public class AuthorityDataController extends BaseController {
         List<User> usersInLocation = userService.findUsersInLocation(locationId);
         modelMap.put("usersInLocation", usersInLocation);
         return "/authorityData/locUsers";
+    }
+
+
+    /**
+     * @param locationId 位置id
+     * @param userIds    用户id字符串
+     * @return 将locationId的数据权限授予users
+     */
+    @RequestMapping(value = "/grantDataAuth", method = RequestMethod.POST)
+    @ResponseBody
+    public ReturnObject grantDataAuth(@RequestParam("locationId") Long locationId, @RequestParam("userIds") String userIds) {
+        return userService.grantDataAuth(locationId, userIds);
     }
 
 

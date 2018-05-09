@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -114,5 +115,18 @@ public class RoleController extends BaseController {
     public ReturnObject addUser(@RequestParam("roleId") Long roleId,@RequestParam("userId") String userId) {
         return roleService.addUser(roleId,userId);
     }
+
+
+
+    /**
+     * 载入明细信息
+     */
+    @RequestMapping(value = "/popUsers/{roleId}", method = RequestMethod.GET)
+    public String popUsers(@PathVariable("roleId") Long roleId, ModelMap modelMap) {
+        List<Object> usersNotInRole = roleService.findUsersNotInRole(roleId);
+        modelMap.put("usersNotInRole", usersNotInRole);
+        return "/role/popUsers";
+    }
+
 
 }

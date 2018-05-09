@@ -19,6 +19,8 @@ $(document).ready(function () {
     $.ajaxSettings.async = false;
     $.getJSON(url, function (data) {
         for (var x = 0; x < data.length; x++) {
+
+            console.log("x-----------------"+JSON.stringify(x));
             zNodes[x] = {
                 id: data[x][0],
                 locCode: data[x][1],

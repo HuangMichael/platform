@@ -2,6 +2,8 @@ package com.subway.service.user;
 
 import com.subway.dao.user.UserRepository;
 import com.subway.domain.user.User;
+import com.subway.location.Location;
+import com.subway.location.LocationRepository;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.BaseService;
 import com.subway.service.commonData.CommonDataService;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +34,10 @@ public class UserService extends BaseService {
 
     @Autowired
     CommonDataService commonDataService;
+
+
+    @Autowired
+    LocationRepository locationRepository;
 
     /**
      * 根据状态查询用户
@@ -174,6 +181,29 @@ public class UserService extends BaseService {
             user = userRepository.save(user);
         }
         return commonDataService.getReturnType(user.getLocation() == null, "数据取消授权成功", "数据取消授权失败");
+    }
+
+
+    /**
+     * @param locationId 对位置locationId对人员进行授权
+     * @param userIds
+     * @return
+     */
+    public ReturnObject grantDataAuth(Long locationId, String userIds) {
+        Location location = locationRepository.getOne(locationId);
+        String userIdArray[] = userIds.split(",");
+        Long userId;
+        User user;
+        List<User> users = new ArrayList<User>();
+        for (String str : userIdArray) {
+            userId = Long.parseLong(str);
+            user = userRepository.findById(userId);
+            user.setLocation(location);
+            userRepository.save(user);
+            users.add(user);
+        }
+        String msg = location.getLocName() + users.size() + "个用户";
+        return commonDataService.getReturnType(!users.isEmpty(), msg + "数据授权成功", "数据授权失败，请重试");
     }
 
 }
