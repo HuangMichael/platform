@@ -29,7 +29,7 @@ public class HtTemplateSearchService extends BaseService implements SortedSearch
      */
     public List<HtTemplate> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return htTemplateRepository.findByTemplateDescContainingAndStatus(array[0],array[1]);
+        return htTemplateRepository.findByTemplateNameContainingAndStatus(array[0],array[1]);
     }
 
 
@@ -41,7 +41,7 @@ public class HtTemplateSearchService extends BaseService implements SortedSearch
      */
     public Page<HtTemplate> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return htTemplateRepository.findByTemplateDescContainingAndStatus(array[0],array[1],pageable);
+        return htTemplateRepository.findByTemplateNameContainingAndStatus(array[0],array[1],pageable);
     }
 
 }

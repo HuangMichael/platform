@@ -2,6 +2,8 @@ package com.subway.template;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
+import com.subway.equipment.Equipment;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ import java.util.Map;
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/template")
+@RequestMapping("/htTemplate")
 public class HtTemplateController extends BaseController {
 
     @Autowired
@@ -52,6 +54,30 @@ public class HtTemplateController extends BaseController {
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
         return new PageUtils().searchBySortService(templateSearchService, searchPhrase, 2, current, rowCount, pageable);
     }
+
+
+
+    /**
+     * @param id
+     * @return 删除模板信息
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return htTemplateService.delete(id);
+    }
+
+
+    /**
+     * @param htTemplate 模板信息
+     * @return 保存模板信息
+     */
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @ResponseBody
+    public ReturnObject save(HtTemplate htTemplate) {
+        return htTemplateService.save(htTemplate);
+    }
+
 
 
     /**

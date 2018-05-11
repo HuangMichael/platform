@@ -29,10 +29,6 @@ public class HtTemplate {
     @Column(length = 50, nullable = false)
     private String templateUrl;//模板路径
 
-    @Column(length = 50, nullable = false)
-    private String templateDesc;//模板描述
-
-
     @Column(length = 100, nullable = false)
     private String fileName; //模板名称
 

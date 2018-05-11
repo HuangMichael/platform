@@ -19,18 +19,19 @@ public interface HtTemplateRepository extends JpaRepository<HtTemplate, Long> {
 
 
     /**
-     * @param templateDesc
+     * @param templateName
      * @param status
      * @return
      */
-    List<HtTemplate> findByTemplateDescContainingAndStatus(String templateDesc, String status);
+    List<HtTemplate> findByTemplateNameContainingAndStatus(String templateName, String status);
 
 
     /**
-     * @param templateDesc
+     * @param templateName
      * @param status
+     * @param pageable
      * @return
      */
-    Page<HtTemplate> findByTemplateDescContainingAndStatus(String templateDesc, String status, Pageable pageable);
+    Page<HtTemplate> findByTemplateNameContainingAndStatus(String templateName, String status, Pageable pageable);
 
 }
