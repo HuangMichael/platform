@@ -13,10 +13,10 @@ import javax.persistence.*;
  * @Date 2018-3-1
  */
 @Entity
-@Table(name = "t_template")
+@Table(name = "t_ht_template")
 @Data
 @NoArgsConstructor
-public class Template {
+public class HtTemplate {
 
 
     @Id
@@ -51,7 +51,7 @@ public class Template {
      * @param fileName
      * @param fileUrl
      */
-    public Template(String templateName, String fileName, String fileUrl) {
+    public HtTemplate(String templateName, String fileName, String fileUrl) {
         this.templateName = templateName;
         this.fileName = fileName;
         this.fileUrl = fileUrl;

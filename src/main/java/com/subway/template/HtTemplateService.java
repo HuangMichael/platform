@@ -1,7 +1,6 @@
 package com.subway.template;
 
 import java.util.List;
-import java.util.Map;
 
 import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +16,34 @@ import org.springframework.stereotype.Service;
  * @Date 2018-3-1
  */
 @Service
-public class TemplateService extends BaseService {
+public class HtTemplateService extends BaseService {
 
 
     @Autowired
-    TemplateRepository templateRepository;
+    HtTemplateRepository templateRepository;
 
-    public List<Template> findAll() {
+    /**
+     * @return
+     */
+    public List<HtTemplate> findAll() {
         return templateRepository.findAll();
     }
 
 
-    public Page<Template> findAll(Pageable pageable) {
+    /**
+     * @param pageable
+     * @return
+     */
+    public Page<HtTemplate> findAll(Pageable pageable) {
         return templateRepository.findAll(pageable);
     }
 
 
-    public Template findById(Long id) {
+    /**
+     * @param id
+     * @return
+     */
+    public HtTemplate findById(Long id) {
         return templateRepository.getOne(id);
     }
 

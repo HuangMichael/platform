@@ -16,10 +16,10 @@ import java.util.List;
  * @Date 2018-3-1
  */
 @Service
-public class TemplateSearchService extends BaseService implements SortedSearchable {
+public class HtTemplateSearchService extends BaseService implements SortedSearchable {
 
     @Autowired
-    TemplateRepository templateRepository;
+    HtTemplateRepository htTemplateRepository;
 
 
     /**
@@ -27,9 +27,9 @@ public class TemplateSearchService extends BaseService implements SortedSearchab
      * @param paramsSize
      * @return
      */
-    public List<Template> findByConditions(String searchPhrase, int paramsSize) {
+    public List<HtTemplate> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return templateRepository.findByTemplateDescContainingAndStatus(array[0],array[1]);
+        return htTemplateRepository.findByTemplateDescContainingAndStatus(array[0],array[1]);
     }
 
 
@@ -39,9 +39,9 @@ public class TemplateSearchService extends BaseService implements SortedSearchab
      * @param pageable
      * @return
      */
-    public Page<Template> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+    public Page<HtTemplate> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return templateRepository.findByTemplateDescContainingAndStatus(array[0],array[1],pageable);
+        return htTemplateRepository.findByTemplateDescContainingAndStatus(array[0],array[1],pageable);
     }
 
 }

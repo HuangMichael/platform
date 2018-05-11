@@ -27,14 +27,14 @@ import java.util.Map;
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/template")
-public class TemplateController extends BaseController {
+public class HtTemplateController extends BaseController {
 
     @Autowired
     ResourceService resourceService;
     @Autowired
-    TemplateService templateService;
+    HtTemplateService htTemplateService;
     @Autowired
-    TemplateSearchService templateSearchService;
+    HtTemplateSearchService templateSearchService;
 
 
     /**
@@ -60,8 +60,8 @@ public class TemplateController extends BaseController {
      */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Template findById(@PathVariable("id") Long id) {
-        return templateService.findById(id);
+    public HtTemplate findById(@PathVariable("id") Long id) {
+        return htTemplateService.findById(id);
     }
 
 
@@ -76,9 +76,9 @@ public class TemplateController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<Template> dataList = templateSearchService.findByConditions(param, 2);
-        templateService.setDataList(dataList);
-        templateService.exportExcel(request, response, docName, titles, colNames);
+        List<HtTemplate> dataList = templateSearchService.findByConditions(param, 2);
+        htTemplateService.setDataList(dataList);
+        htTemplateService.exportExcel(request, response, docName, titles, colNames);
     }
 
 
