@@ -85,6 +85,7 @@ public class AutoGenerationService {
 
         TableConfig tableConfig = app.getTableConfig();
         String className = tableConfig.getShortName();
+//        String tableName = tableConfig.getTableName();
         String comment = tableConfig.getTableDesc();
         String subDirName = StringUtils.lowerCaseCamel(className);
         //设置模板文件路径
@@ -95,6 +96,9 @@ public class AutoGenerationService {
         rootMap.put("tableName", tableName);
         rootMap.put("className", className);
         rootMap.put("columns", tableColumnConfigList);
+
+        List<TableColumnConfig> tableColumnConfigs = tableColumnConfigService.findAll();
+        log.info("tableColumnConfigs-----------------" + tableColumnConfigs.size());
 
         htTemplateList = htTemplateService.findAll();
         for (HtTemplate template : htTemplateList) {
