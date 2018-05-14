@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <header class="navbar clearfix" id="header">
     <div class="container">
         <div class="navbar-brand">
             <!-- COMPANY LOGO -->
             <a>
-                <img src="/img/logo/head_logo.png" alt="${sessionScope.sysName}" class="img-responsive"  style="width: 300px;height:45px">
+                <img src="/img/logo/head_logo.png" alt="${sessionScope.sysName}" class="img-responsive"  style="width: 50px;height:50px">
             </a>
             <div class="visible-xs">
                 <a onclick="javascript:void(0)" class="team-status-toggle switcher btn dropdown-toggle">
@@ -21,29 +21,6 @@
             <!-- /SIDEBAR COLLAPSE -->
         </div>
         <ul class="nav navbar-nav pull-right">
-
-            <%--<li class="dropdown" id="header-notification">--%>
-            <%--<a class="dropdown-toggle" data-toggle="dropdown" id="reportOrder" title="流程审批信息">--%>
-            <%--<i class="fa  fa-wrench" id="linkTag"></i>--%>
-            <%--<span class="badge" id="reportOrderSize"></span>--%>
-            <%--</a>--%>
-            <%--<ul class="dropdown-menu notification">--%>
-            <%--<li class="dropdown-title">--%>
-            <%--<span id="orderMsgCnt"><i class="fa fa-bell"></i></span>--%>
-            <%--</li>--%>
-            <%--<div id="orderBox"></div>--%>
-            <%--</ul>--%>
-            <%--</li>--%>
-
-
-            <%--<li class="dropdown" id="header-notification2">--%>
-            <%--<a class="dropdown-toggle" data-toggle="dropdown" id="expiredOrder" title="待办任务信息">--%>
-            <%--<i class="fa fa-warning"></i>--%>
-            <%--<span class="badge" id="expiredOrderSize"></span>--%>
-            <%--</a>--%>
-            <%--</li>--%>
-
-
             <li class="dropdown user" id="header-user">
                 <a onclick="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                     <img alt="" src="${currentUser.photoUrl}"/>
@@ -83,8 +60,6 @@
             $("#user_modal").modal("show");
         });
     }
-
-
     /**
      * 重载session数据
      */
@@ -94,65 +69,9 @@
             showMessageBox("info", "数据加载成功");
         });
     }
-
     $(function () {
-        $("#reportOrder").on("click", function () {
-            var num = $("#reportOrderSize").html();
-            var url = "/workOrderReportCart/findMyCart";
-            if (!isNaN(num)) {
-                url += "/" + num; //查询最近N条
-            } else {
-                return;
-            }
-            $.getJSON(url, function (data) {
-                var html = "";
-                for (var x = 0; x < data.length; x++) {
-                    html += "<li>";
-                    html += "<a javascript:void(0)>";
-                    html += '<span class="label label-success">' + (x + 1) + "</span>";
-                    html += '<span class="body">';
-                    html += '<span class="message">' + data[x]["vlocations"]["locName"] + "--" + data[x]["equipmentsClassification"]["description"] + "</span>";
-                    html += '<span class="time">';
-                    html += "<span></span>";
-                    html += "</span>";
-                    html += "</span>";
-                    html += "</a>";
-                    html += " </li>"
-                }
-                $("#orderMsgCnt").html(data.length + "个报修信息");
-                $("#orderBox").html(html)
-            })
-        });
 
 
-        $("#linkTag").on("click", function () {
-            var dataUrl = '/workOrderReportCart/list'
-            $("#main-content").load(dataUrl, function () {
-                $(this).removeData("url");
-            });
 
-        });
-        var expiredCount = getExpiredCount();
-
-        $("#expiredOrder").on("click", function () {
-            var url = "workOrderFix/list";
-            $("#main-content").load(url, function () {
-                $(this).removeData("url");
-                var formTab = $('#myTab li:eq(1) a');
-                formTab.trigger("click");
-                $("#expiredOrderSize").html(expiredCount);
-            });
-        });
     });
-
-
-    /**
-     *
-     * @returns {number} 查询过期的工单数量
-     */
-    function getExpiredCount() {
-
-        return 0;
-    }
-
 </script>
