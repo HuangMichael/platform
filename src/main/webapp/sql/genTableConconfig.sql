@@ -19,9 +19,9 @@ SELECT
         WHEN c.IS_NULLABLE = 'NO' THEN 0x0
         ELSE '其他'
     END AS is_null,
-        24 AS table_id,
+        26 AS table_id
 FROM
     information_schema.columns c
 WHERE
-    c.table_schema = 'mms'
-        AND c.table_name = 't_message_reply'
+    c.table_schema = 'platform'
+        AND c.table_name = 't_ht_template_lib'
