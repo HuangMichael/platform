@@ -41,6 +41,30 @@ $(document).ready(function () {
         zTree.selectNode(zTree.getNodeByParam("id", zNodes[0]));
 
 
+
+
+
+        var grid = $("#htTemplateLibListTable").bootgrid({
+            selection: true,
+            multiSelect: true,
+            ajax: true,
+            post: function () {
+                return {
+                    id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+                };
+            },
+            url: "/htTemplate/data",
+            formatters: {
+                "commands": showCommandsBtn
+            },
+            converters: {
+                showStatus: {
+                    to: showStatus
+                }
+            }
+        });
+
+
     });
 
     function loadReady() {
@@ -70,6 +94,15 @@ $(document).ready(function () {
 function setTemplateLib(data) {
     $("#libName").val(data.libName);
     $("#libDesc").val(data.libDesc);
-    // setFormReadStatus("#detailForm", true);
-    // loadUserList(data.id);
+
+    initDataTable();
+
+    //载入模板信息
+}
+
+
+
+function initDataTable(){
+
+
 }

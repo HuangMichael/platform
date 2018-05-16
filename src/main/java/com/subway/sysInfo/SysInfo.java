@@ -1,20 +1,22 @@
-package com.subway.domain.app.org;
+package com.subway.sysInfo;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
- * Created by HUANGBIN on 2016/4/15.
- * 组织  配置系统信息
- */
-
+* 系统信息实体类
+*
+* @author huangbin
+* @generate by autoCode
+* @Date 2018-3-1
+*/
 @Entity
-@Table(name = "T_SYS_INFO")
+@Table(name = "t_sys_info")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class SystemInfo {
+public class SysInfo  implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,4 +29,5 @@ public class SystemInfo {
     @Column(length = 1)
     private String status;
     private Long sortNo; //排序
+
 }

@@ -2,6 +2,7 @@ package com.subway.service.dev;
 
 import com.subway.dao.dev.AppRepository;
 import com.subway.domain.dev.App;
+import com.subway.location.Location;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.BaseService;
 import com.subway.service.commonData.CommonDataService;
@@ -84,5 +85,16 @@ public class AppService extends BaseService {
         }
 
         return result;
+    }
+
+
+    /**
+     * @param id
+     * @return 根据ID删除应用信息
+     */
+    public ReturnObject delete(Long id) {
+        appRepository.delete(id);
+        App app = appRepository.findOne(id);
+        return commonDataService.getReturnType(app == null, ConstantUtils.DELETE_SUCCESS, ConstantUtils.DELETE_FAILURE);
     }
 }

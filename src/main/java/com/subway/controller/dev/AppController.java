@@ -102,4 +102,15 @@ public class AppController extends BaseController {
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return appService.delete(id);
+    }
+
+
 }

@@ -33,8 +33,8 @@ $(function () {
                 return "<button type='button' class='btn btn-xs btn-default command-wrench' data-row-id='" + row.id + "' onclick='formatConfig(" + row.id + ")'><span class='fa fa-wrench'></span></button> "
             },
             "commands": function (column, row) {
-                return "<button type='button' class='btn btn-xs btn-default command-edit' data-row-id='" + row.id + "'><span class='fa fa-pencil'></span></button> " +
-                    "<button type='button' class='btn btn-xs btn-default command-delete' data-row-id='" + row.id + "'><span class='fa fa-trash-o'></span></button>";
+                return "<button type='button' class='btn btn-xs btn-default command-edit' data-row-id='" + row.id + "'  onclick='edit(" + row.id + ")'><span class='fa fa-pencil'></span></button> " +
+                    "<button type='button' class='btn btn-xs btn-default command-delete' data-row-id='" + row.id + "'  onclick='del(" + row.id + ")'><span class='fa fa-trash-o'></span></button>";
             }
         },
         converters: {

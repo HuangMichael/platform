@@ -1,10 +1,10 @@
 package com.subway.controller.app;
 
-import com.subway.domain.app.org.SystemInfo;
+import com.subway.sysInfo.SysInfo;
+import com.subway.sysInfo.SysInfoService;
 import com.subway.domain.user.User;
 import com.subway.object.ReturnObject;
 import com.subway.service.commonData.CommonDataService;
-import com.subway.service.org.SysInfoService;
 import com.subway.service.user.UserService;
 import com.subway.utils.ConstantUtils;
 import com.subway.utils.Md5Utils;
@@ -42,12 +42,12 @@ public class LoginController {
     @RequestMapping("/")
     public String logout(HttpServletRequest request, ModelMap modelMap) {
         HttpSession session = request.getSession();
-        SystemInfo systemInfo = sysInfoService.findBySysName("system_name");
+        SysInfo sysInfo = sysInfoService.findBySysName("system_name");
         if (session.getId() != null) {
             request.removeAttribute("currentUser");
             request.getSession().invalidate();
         }
-        modelMap.put("sysName", systemInfo.getDescription());
+        modelMap.put("sysName", sysInfo.getDescription());
         return "/index";
     }
     /**

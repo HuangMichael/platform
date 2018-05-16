@@ -512,9 +512,7 @@ var showGender = function (value) {
 var showTableName = function (value) {
 
 
-
-    // console.log("showTableName-------------" + JSON.stringify(value));
-    return value ? value["tableName"] : "无";
+    return value&&value["tableName"] ? value["tableName"] : "无";
 }
 
 

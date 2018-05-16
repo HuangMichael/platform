@@ -24,4 +24,4 @@ FROM
     information_schema.columns c
 WHERE
     c.table_schema = 'platform'
-        AND c.table_name = 't_ht_template_lib'
+        AND c.table_name = 't_sys_info'

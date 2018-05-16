@@ -40,7 +40,13 @@
                     </div>
                     <div class="box border blue">
                         <div class="box-body">
-                            <div id="dataView" style="height: 225px"></div>
+                            <table id="htTemplateLibListTable"   class="table table-bordered table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <%@include file="tableList.jsp" %>
+                                </tr>
+                                </thead>
+                            </table>
                         </div>
 
                     </div>

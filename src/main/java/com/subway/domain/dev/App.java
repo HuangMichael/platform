@@ -25,7 +25,7 @@ public class App {
     private String appDesc;//应用描述
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "table_config_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "table_config_id", referencedColumnName = "id")
     private TableConfig tableConfig;
 
     @Column(length = 20)
