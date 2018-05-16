@@ -29,6 +29,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 @RequestMapping("/userLog")
 public class UserLogController extends BaseController {
+
     private static Integer SEARCH_PARAM_SIZE = 2;
 
     @Autowired
@@ -64,28 +65,6 @@ public class UserLogController extends BaseController {
     @ResponseBody
     public UserLog findById(@PathVariable("id") Long id) {
         return userLogService.findById(id);
-    }
-
-
-    /**
-     * @param id
-     * @return 删除用户日志信息信息
-     */
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    @ResponseBody
-    public ReturnObject delete(@PathVariable("id") Long id) {
-        return userLogService.delete(id);
-    }
-
-
-    /**
-     * @param userLog 用户日志信息 信息
-     * @return 保存用户日志信息信息
-     */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    @ResponseBody
-    public ReturnObject save(UserLog userLog) {
-        return userLogService.save(userLog);
     }
 
 

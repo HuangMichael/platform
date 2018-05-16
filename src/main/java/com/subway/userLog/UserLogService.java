@@ -32,16 +32,6 @@ public class UserLogService extends BaseService {
     @Autowired
     CommonDataService commonDataService;
 
-    public List
-            <UserLog> findAll() {
-        return userLogRepository.findAll();
-    }
-
-
-    public Page<UserLog> findAll(Pageable pageable) {
-        return userLogRepository.findAll(pageable);
-    }
-
 
     /**
      * @param id id
@@ -67,6 +57,16 @@ public class UserLogService extends BaseService {
 
     public UserLog findById(Long id) {
         return userLogRepository.getOne(id);
+    }
+
+
+
+    /**
+     * @param userLog
+     * @return 创建用户日志
+     */
+    public UserLog createUserLog(UserLog userLog) {
+        return userLogRepository.save(userLog);
     }
 
 }

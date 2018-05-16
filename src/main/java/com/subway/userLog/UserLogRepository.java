@@ -3,6 +3,8 @@ package com.subway.userLog;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -15,6 +17,21 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 
 public interface UserLogRepository extends JpaRepository<UserLog, Long> {
+
+
+    /**
+     * @param userName
+     * @return
+     */
+    List<UserLog> findByUserNameContains(String userName);
+
+
+    /**
+     * @param userName
+     * @param pageable
+     * @return
+     */
+    Page<UserLog> findByUserNameContains(String userName, Pageable pageable);
 
 
 }

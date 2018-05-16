@@ -69,26 +69,6 @@ $(document).ready(function () {
 });
 
 var flag = false;
-/**
- * 新建记录
- */
-function add() {
-    var tree = getTreeRoot();
-    var selectedNode = tree.getSelectedNodes()[0];
-    var id = selectedNode.id;
-    if (!id) {
-        id = 0
-    }
-    var url = "/resource/create/" + id;
-    $("#parentId").val(id);
-    $("#contentDiv").load(url);
-}
-
-
-function edit() {
-
-
-}
 
 
 /**
@@ -175,4 +155,18 @@ function del() {
     } else {
         showMessageBoxCenter("danger", "center", "请选中一条记录再操作");
     }
+}
+
+/**
+ * 新建记录
+ */
+function add() {
+    // var tree = getTreeRoot();
+    // var selectedNode = tree.getSelectedNodes()[0];
+    // var id = selectedNode.id;
+    //
+    //
+    // console.log("---------------------------"+JSON.stringify(selectedNode));
+    vdm.$set("resource", null);
+    $("#editModal").modal("show");
 }

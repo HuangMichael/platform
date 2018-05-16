@@ -3,9 +3,9 @@ package com.subway.aop;
 
 import com.subway.userLog.UserLog;
 import com.subway.domain.user.User;
-import com.subway.domain.userLog.UserLogService;
 import com.subway.object.ReturnObject;
 import com.subway.service.user.UserService;
+import com.subway.userLog.UserLogService;
 import com.subway.utils.ConstantUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;

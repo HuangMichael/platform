@@ -14,35 +14,31 @@ import java.util.List;
  *
  * @author huangbin
  * @generate by autoCode
- * @Date 2018-3-1
+ * @Date 2018-5-16
  */
 @Service
 public class UserLogSearchService extends BaseService implements SortedSearchable {
 
     @Autowired
     UserLogRepository userLogRepository;
-
-
     /**
-     * @param searchPhrase 搜索关键字组合
-     * @param paramsSize
-     * @return
+     * @param searchPhrase
+     * @return 根据多条件关键字进行查询
      */
-    public List<UserLog> findByConditions(String searchPhrase, int paramsSize) {
-        String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return userLogRepository.findAll();
+    public List<UserLog> findByConditions(String searchPhrase, int paramSize) {
+        String array[] = super.assembleSearchArray(searchPhrase, paramSize);
+        return userLogRepository.findByUserNameContains(array[0]);
     }
 
 
     /**
-     * @param searchPhrase 搜索关键字组合
-     * @param paramsSize
-     * @param pageable
-     * @return
+     * @param searchPhrase
+     * @return 根据多条件关键字进行查询
      */
-    public Page<UserLog> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
-        String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return userLogRepository.findAll(pageable);
+    public Page<UserLog> findByConditions(String searchPhrase, int paramSize, Pageable pageable) {
+        String array[] = super.assembleSearchArray(searchPhrase, paramSize);
+        return userLogRepository.findByUserNameContains(array[0], pageable);
     }
+
 
 }
