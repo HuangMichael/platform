@@ -1,6 +1,6 @@
 package com.subway.dao.userLog;
 
-import com.subway.domain.log.UserLog;
+import com.subway.userLog.UserLog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

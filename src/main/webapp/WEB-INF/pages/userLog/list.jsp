@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>工单信息</h4>
+                            <h4><i class="fa fa-table"></i>用户日志信息</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -33,7 +33,7 @@
                                             <%@include file="../common/common-searchBtn.jsp" %>
                                         </div>
                                     </div>
-                                    <table id="workOrderListTable"
+                                    <table id="userLogListTable"
                                            class="table table-bordered table-hover table-striped">
                                         <thead>
                                         <tr>
@@ -89,4 +89,4 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/js/app/workOrder/workOrder.js"></script>
+<script type="text/javascript" src="/js/app/userLog/userLog.js"></script>

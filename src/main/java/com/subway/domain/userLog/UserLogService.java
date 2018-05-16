@@ -2,7 +2,7 @@ package com.subway.domain.userLog;
 
 
 import com.subway.dao.userLog.UserLogRepository;
-import com.subway.domain.log.UserLog;
+import com.subway.userLog.UserLog;
 import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

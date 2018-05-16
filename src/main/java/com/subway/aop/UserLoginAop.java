@@ -1,7 +1,7 @@
 package com.subway.aop;
 
 
-import com.subway.domain.log.UserLog;
+import com.subway.userLog.UserLog;
 import com.subway.domain.user.User;
 import com.subway.domain.userLog.UserLogService;
 import com.subway.object.ReturnObject;

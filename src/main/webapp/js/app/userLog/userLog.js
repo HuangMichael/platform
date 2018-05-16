@@ -8,9 +8,9 @@ $(function () {
 
 
 //导出必须配置的两个量
-dataTableName = "#workOrderListTable";
-docName = "工单信息";
-mainObject = "workOrder";
+dataTableName = "#userLogListTable";
+docName = "用户日志信息";
+mainObject = "userLog";
 formName = "#form";
 
 
@@ -56,7 +56,7 @@ $("#searchBtn").trigger("click");
 vdm = new Vue({
 el: formName,
 data: {
-"workOrder": null
+"userLog": null
 }
 });
 initSelect();
@@ -114,7 +114,7 @@ showMessage(msg.result, msg["resultDesc"]);
 */
 function edit(id) {
 var object = findByIdAndObjectName(id, mainObject);
-vdm.$set("workOrder", object);
+vdm.$set("userLog", object);
 $("#editModal").modal("show");
 }
 
@@ -123,7 +123,7 @@ $("#editModal").modal("show");
 * 编辑记录
 */
 function add() {
-vdm.$set("workOrder", null);
+vdm.$set("userLog", null);
 $("#editModal").modal("show");
 }
 
