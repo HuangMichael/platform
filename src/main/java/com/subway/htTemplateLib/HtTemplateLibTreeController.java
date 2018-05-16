@@ -1,17 +1,12 @@
-package com.subway.locationTree;
+package com.subway.htTemplateLib;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.user.User;
-import com.subway.location.Location;
-import com.subway.location.LocationSearchService;
-import com.subway.location.LocationService;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
-import com.subway.utils.ConstantUtils;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
@@ -26,22 +21,34 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 位置信息
+ * 模板库信息
  *
  * @author huangbin
  * @generate by autoCode
- * @Date 2018-3-12
+ * @Date 2018-5-15
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/locationTree")
-@Slf4j
-public class LocationTreeController extends BaseController {
+@RequestMapping("/htTemplateLibTree")
+public class HtTemplateLibTreeController extends BaseController {
 
 
+    @Autowired
+    ResourceService resourceService;
+    @Autowired
+    HtTemplateLibService htTemplateLibService;
+    @Autowired
+    HtTemplateLibSearchService htTemplateLibSearchService;
 
 
-
+    /**
+     * @return 查询的位置树节点集合
+     */
+    @RequestMapping(value = "/findTree")
+    @ResponseBody
+    public List<Object> findTree() {
+        return htTemplateLibService.findTree();
+    }
 
 
 }

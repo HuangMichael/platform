@@ -32,12 +32,18 @@ public class HtTemplateLibService extends BaseService {
     @Autowired
     CommonDataService commonDataService;
 
-    public List
-            <HtTemplateLib> findAll() {
+    /**
+     * @return
+     */
+    public List<HtTemplateLib> findAll() {
         return htTemplateLibRepository.findAll();
     }
 
 
+    /**
+     * @param pageable
+     * @return
+     */
     public Page<HtTemplateLib> findAll(Pageable pageable) {
         return htTemplateLibRepository.findAll(pageable);
     }
@@ -65,8 +71,21 @@ public class HtTemplateLibService extends BaseService {
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     public HtTemplateLib findById(Long id) {
-        return htTemplateLibRepository.getOne(id);
+        return htTemplateLibRepository.findById(id);
+    }
+
+
+
+    /**
+     * @return 查询树结构 模糊查询
+     */
+    public List<Object> findTree() {
+        return htTemplateLibRepository.findTree();
     }
 
 }

@@ -34,9 +34,6 @@ public class HtTemplateLib implements Serializable {
     @JoinColumn(name = "parent_id", referencedColumnName = "id")
     private HtTemplateLib parent;  //所属位置
 
-    @Column(length = 20, nullable = false) //默认位置正常
-    private String authKey;//状态
-
     @Column(length = 1, nullable = false) //默认位置正常
     private String status;//状态
 
