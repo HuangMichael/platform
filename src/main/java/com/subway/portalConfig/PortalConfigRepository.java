@@ -1,6 +1,10 @@
 package com.subway.portalConfig;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 
 /**
@@ -12,6 +16,26 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 
 public interface PortalConfigRepository extends JpaRepository<PortalConfig, Long> {
+
+
+    /**
+     * @param name
+     * @param status
+     * @return
+     */
+    List<PortalConfig> findByNameContainingAndStatus(String name, String status);
+
+
+
+
+
+    /**
+     * @param name
+     * @param status
+     * @param pageable
+     * @return
+     */
+    Page<PortalConfig> findByNameContainingAndStatus(String name, String status, Pageable pageable);
 
 
 }

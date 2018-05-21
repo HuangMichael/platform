@@ -30,7 +30,7 @@ public class PortalConfigSearchService extends BaseService implements SortedSear
      */
     public List<PortalConfig> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return portalRepository.findAll();
+        return portalRepository.findByNameContainingAndStatus(array[0],array[1]);
     }
 
 
@@ -42,7 +42,7 @@ public class PortalConfigSearchService extends BaseService implements SortedSear
      */
     public Page<PortalConfig> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return portalRepository.findAll(pageable);
+        return portalRepository.findByNameContainingAndStatus(array[0],array[1],pageable);
     }
 
 }
