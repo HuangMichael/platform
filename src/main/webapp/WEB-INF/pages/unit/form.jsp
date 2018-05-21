@@ -19,15 +19,12 @@
             <div class="col-md-4">
                 <input class="form-control" id="parentId" name="parent.id" v-model="unit.parent.id"/>
             </div>
-            <label for="sortNo" class="col-md-2 control-label">排序</label>
-            <div class="col-md-4">
-                <input class="form-control" id="sortNo" name="sortNo" v-model="unit.sortNo"/>
-            </div>
-        </div>
-        <div class="form-group">
             <label for="status" class="col-md-2 control-label">状态</label>
             <div class="col-md-4">
-                <input class="form-control" id="status" name="status" v-model="unit.status" required/>
+                <select class="form-control" id="status" v-model="unit.status" style="width:100%">
+                    <option value="1" selected>有效</option>
+                    <option value="0">无效</option>
+                </select>
             </div>
         </div>
     </div>

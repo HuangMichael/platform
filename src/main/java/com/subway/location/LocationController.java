@@ -35,7 +35,7 @@ import java.util.Map;
 @Slf4j
 public class LocationController extends BaseController {
 
-    private static Integer SEARCH_PARAM_SIZE = 3;
+    private static Integer SEARCH_PARAM_SIZE = 2;
 
     @Autowired
     ResourceService resourceService;
