@@ -1,4 +1,4 @@
-package com.subway.portal;
+package com.subway.portalConfig;
 
 
 import lombok.Data;
@@ -10,9 +10,9 @@ import javax.persistence.*;
  * 门户信息
  */
 @Entity
-@Table(name = "T_PORTAL")
+@Table(name = "T_PORTAL_CONFIG")
 @Data
-public class Portal implements java.io.Serializable {
+public class PortalConfig implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -9,7 +9,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-       /* registry.addInterceptor(new UserSecurityInterceptor()).addPathPatterns("/back/portal/index");
+       /* registry.addInterceptor(new UserSecurityInterceptor()).addPathPatterns("/back/portalConfig/index");
         registry.addInterceptor(new UserSecurityInterceptor()).excludePathPatterns("/back/logout");
         registry.addInterceptor(new Interceptor2()).excludePathPatterns("/back/login");*/
         super.addInterceptors(registry);

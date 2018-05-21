@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>门户信息</h4>
+                            <h4><i class="fa fa-table"></i>门户配置</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -33,7 +33,7 @@
                                             <%@include file="../common/common-searchBtn.jsp" %>
                                         </div>
                                     </div>
-                                    <table id="portalListTable"
+                                    <table id="portalConfigListTable"
                                            class="table table-bordered table-hover table-striped">
                                         <thead>
                                         <tr>

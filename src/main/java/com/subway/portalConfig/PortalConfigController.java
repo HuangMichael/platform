@@ -1,4 +1,4 @@
-package com.subway.portal;
+package com.subway.portalConfig;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
@@ -27,16 +27,17 @@ import java.util.Map;
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/portal")
-public class PortalController extends BaseController {
+@RequestMapping("/portalConfig")
+public class PortalConfigController extends BaseController {
+    
     private static Integer SEARCH_PARAM_SIZE = 2;
 
     @Autowired
     ResourceService resourceService;
     @Autowired
-    PortalService portalService;
+    PortalConfigService portalConfigService;
     @Autowired
-    PortalSearchService portalSearchService;
+    PortalConfigSearchService portalConfigSearchService;
 
 
     /**
@@ -53,7 +54,7 @@ public class PortalController extends BaseController {
     public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(portalSearchService, searchPhrase, SEARCH_PARAM_SIZE, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(portalConfigSearchService, searchPhrase, SEARCH_PARAM_SIZE, current, rowCount, pageable);
     }
 
     /**
@@ -62,8 +63,8 @@ public class PortalController extends BaseController {
      */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Portal findById(@PathVariable("id") Long id) {
-        return portalService.findById(id);
+    public PortalConfig findById(@PathVariable("id") Long id) {
+        return portalConfigService.findById(id);
     }
 
 
@@ -74,18 +75,18 @@ public class PortalController extends BaseController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ReturnObject delete(@PathVariable("id") Long id) {
-        return portalService.delete(id);
+        return portalConfigService.delete(id);
     }
 
 
     /**
-     * @param portal 门户信息 信息
+     * @param portalConfig 门户信息 信息
      * @return 保存门户信息信息
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
-    public ReturnObject save(Portal portal) {
-        return portalService.save(portal);
+    public ReturnObject save(PortalConfig portalConfig) {
+        return portalConfigService.save(portalConfig);
     }
 
 
@@ -100,9 +101,9 @@ public class PortalController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<Portal> dataList = portalSearchService.findByConditions(param, SEARCH_PARAM_SIZE);
-        portalService.setDataList(dataList);
-        portalService.exportExcel(request, response, docName, titles, colNames);
+        List<PortalConfig> dataList = portalConfigSearchService.findByConditions(param, SEARCH_PARAM_SIZE);
+        portalConfigService.setDataList(dataList);
+        portalConfigService.exportExcel(request, response, docName, titles, colNames);
     }
 
 

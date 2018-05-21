@@ -651,7 +651,7 @@ var App = function () {
     };
     return {
         init: function () {
-            if (App.isPage("portal")) {
+            if (App.isPage("portalConfig")) {
                 handleCalendar();
                 handleGritter()
             }

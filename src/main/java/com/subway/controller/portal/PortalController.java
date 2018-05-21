@@ -33,16 +33,5 @@ public class PortalController {
 
         return "/portal/list";
     }
-
-
-//    /**
-//     * @param reportMonth 月份
-//     * @return
-//     */
-//    @RequestMapping(value = "/findTopEqClass/{reportMonth}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<Object> findTopNReportCartByEqClass(@PathVariable(value = "reportMonth") String reportMonth) {
-//        return portalService.findTopNReportByEqClass(reportMonth);
-//    }
 }
 

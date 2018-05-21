@@ -1,7 +1,6 @@
-package com.subway.portal;
+package com.subway.portalConfig;
 
 import java.util.List;
-import java.util.Map;
 
 import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +21,22 @@ import static com.subway.utils.ConstantUtils.*;
  * @Date 2018-3-1
  */
 @Service
-public class PortalService extends BaseService {
+public class PortalConfigService extends BaseService {
 
 
     @Autowired
-    PortalRepository portalRepository;
+    PortalConfigRepository portalRepository;
 
 
     @Autowired
     CommonDataService commonDataService;
 
-    public List  <Portal> findAll() {
+    public List  <PortalConfig> findAll() {
         return portalRepository.findAll();
     }
 
 
-    public Page<Portal> findAll(Pageable pageable) {
+    public Page<PortalConfig> findAll(Pageable pageable) {
         return portalRepository.findAll(pageable);
     }
 
@@ -48,23 +47,23 @@ public class PortalService extends BaseService {
      */
     public ReturnObject delete(Long id) {
         portalRepository.delete(id);
-        Portal portal = portalRepository.findOne(id);
-        return commonDataService.getReturnType(portal == null, DELETE_SUCCESS, DELETE_FAILURE);
+        PortalConfig portalConfig = portalRepository.findOne(id);
+        return commonDataService.getReturnType(portalConfig == null, DELETE_SUCCESS, DELETE_FAILURE);
     }
 
 
     /**
-     * @param portal
+     * @param portalConfig
      * @return 保存信息
      */
-    public ReturnObject save(Portal portal) {
+    public ReturnObject save(PortalConfig portalConfig) {
 
-        portal = portalRepository.save(portal);
-        return commonDataService.getReturnType(portal != null, SAVE_SUCCESS, SAVE_FAILURE);
+        portalConfig = portalRepository.save(portalConfig);
+        return commonDataService.getReturnType(portalConfig != null, SAVE_SUCCESS, SAVE_FAILURE);
     }
 
 
-    public Portal findById(Long id) {
+    public PortalConfig findById(Long id) {
         return portalRepository.getOne(id);
     }
 

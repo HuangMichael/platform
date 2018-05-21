@@ -1,4 +1,4 @@
-package com.subway.portal;
+package com.subway.portalConfig;
 
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
@@ -17,10 +17,10 @@ import java.util.List;
  * @Date 2018-3-1
  */
 @Service
-public class PortalSearchService extends BaseService implements SortedSearchable {
+public class PortalConfigSearchService extends BaseService implements SortedSearchable {
 
     @Autowired
-    PortalRepository portalRepository;
+    PortalConfigRepository portalRepository;
 
 
     /**
@@ -28,7 +28,7 @@ public class PortalSearchService extends BaseService implements SortedSearchable
      * @param paramsSize
      * @return
      */
-    public List<Portal> findByConditions(String searchPhrase, int paramsSize) {
+    public List<PortalConfig> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
         return portalRepository.findAll();
     }
@@ -40,7 +40,7 @@ public class PortalSearchService extends BaseService implements SortedSearchable
      * @param pageable
      * @return
      */
-    public Page<Portal> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+    public Page<PortalConfig> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
         return portalRepository.findAll(pageable);
     }

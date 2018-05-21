@@ -4,15 +4,10 @@
 <form class="form-horizontal" id="form" method="post">
     <div class="form-group">
         <div class="col-md-12">
-                    <div class="form-group">
-                <label for="id" class="col-md-2 control-label">序号</label>
-                <div class="col-md-4">
-                    <input class="form-control" id="id" name="id" v-model="portalConfig.id" />
-                </div>
-            </div>
             <div class="form-group">
                 <label for="name" class="col-md-2 control-label">名称</label>
                 <div class="col-md-4">
+                    <input class="form-control" id="id" name="id" v-model="portalConfig.id" type="hidden" />
                     <input class="form-control" id="name" name="name" v-model="portalConfig.name"  required/>
                 </div>
             </div>
@@ -25,7 +20,10 @@
             <div class="form-group">
                 <label for="status" class="col-md-2 control-label">状态</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="status" name="status" v-model="portalConfig.status" />
+                    <select class="form-control" id="status" v-model="portalConfig.status" style="width:100%">
+                        <option value="1" selected>有效</option>
+                        <option value="0">无效</option>
+                    </select>
                 </div>
             </div>
         </div>

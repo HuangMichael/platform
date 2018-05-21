@@ -1,4 +1,4 @@
-package com.subway.portal;
+package com.subway.portalConfig;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Date 2018-3-1
  */
 
-public interface PortalRepository extends JpaRepository<Portal, Long> {
+public interface PortalConfigRepository extends JpaRepository<PortalConfig, Long> {
 
 
 }
