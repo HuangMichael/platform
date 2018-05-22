@@ -228,7 +228,7 @@ function initSelect() {
 function resetSearch() {
     var params = $("#searchBox :input");
     $.each(params, function (i, p) {
-        if (!$(p).is(":button")) {
+        if ($(p).is(":text")) {
             $(p).val("");
         }
     });
