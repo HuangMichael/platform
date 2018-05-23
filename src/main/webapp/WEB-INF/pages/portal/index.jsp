@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <% response.setContentType("text/html;charset=UTF-8");%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -19,18 +19,15 @@
                 <div id="content" class="col-lg-12">
                     <!-- PAGE HEADER-->
                     <%@include file="../common/common-breadcrumb.jsp" %>
-                    <div class="row"  style="overflow: scroll">
-                        <div class="col-md-6">
-                            <div id="chart1" class='portalChart'></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="chart3" class='portalChart'></div>
-                        </div>
+                    <div class="row" style="overflow-y:scroll">
+
+                        <c:forEach var="p" items="${chartList}">
+                            <div class="col-md-${p.colWidth}">
+                                <div id="chart${p.sortNo}" class='portalChart'></div>
+                            </div>
+                        </c:forEach>
                         <div class="col-md-12">
-                            <div id="chart2" class='portalChart'></div>
-                        </div>
-                        <div class="col-md-12">
-                            <div  style="float:right; ">Copyright ©2018甘肃惠腾科技有限公司 版权所有.</div>
+                            <div style="float:right; ">Copyright ©2018甘肃惠腾科技有限公司 版权所有.</div>
                         </div>
                     </div>
                 </div>

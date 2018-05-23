@@ -20,7 +20,7 @@ import static com.subway.utils.ConstantUtils.*;
 public class UserLogService extends BaseService {
 
 
-    @Autowired
+    @Autowired(required = false)
     UserLogRepository userLogRepository;
 
 
@@ -53,7 +53,6 @@ public class UserLogService extends BaseService {
     public UserLog findById(Long id) {
         return userLogRepository.getOne(id);
     }
-
 
 
     /**
