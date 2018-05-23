@@ -46,7 +46,7 @@ public class Role {
 
 
     @JsonBackReference
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "t_role_portal", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "portal_id")})
     private List<PortalConfig> portalList;
 }

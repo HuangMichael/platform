@@ -38,4 +38,5 @@ public interface PortalConfigRepository extends JpaRepository<PortalConfig, Long
     Page<PortalConfig> findByNameContainingAndStatus(String name, String status, Pageable pageable);
 
 
+
 }
