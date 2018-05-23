@@ -19,7 +19,7 @@
                 <div id="content" class="col-lg-12">
                     <!-- PAGE HEADER-->
                     <%@include file="../common/common-breadcrumb.jsp" %>
-                    <div class="row">
+                    <div class="row"  style="overflow: scroll">
                         <div class="col-md-6">
                             <div id="chart1" class='portalChart'></div>
                         </div>
@@ -62,7 +62,6 @@
             var myChart1 = ec.init(document.getElementById('chart1'));
             var myChart2 = ec.init(document.getElementById('chart2'));
             var myChart3 = ec.init(document.getElementById('chart3'));
-
 
             var weatherIcons = {
                 'Sunny': './data/asset/img/weather/sunny_128.png',
@@ -310,8 +309,6 @@
                     }
                 ]
             };
-
-
             // 为echarts对象加载数据
             myChart1.setOption(option1);
             myChart2.setOption(option2);

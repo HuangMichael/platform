@@ -1,13 +1,17 @@
 package com.subway.controller.portal;
 
 
+import com.subway.domain.user.User;
 import com.subway.service.portal.PortalService;
+import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by huangbin on 2015/12/23 0023.
@@ -23,15 +27,15 @@ public class PortalController {
 
 
     @RequestMapping(value = "/index")
-    public String index(ModelMap modelMap) {
+    public String index(HttpSession session, ModelMap modelMap) {
+
+
+        User user = SessionUtil.getCurrentUserBySession(session);
+
+        user.getRoleList();
 
         return "/portal/index";
     }
 
-    @RequestMapping(value = "/list")
-    public String list(ModelMap modelMap) {
-
-        return "/portal/list";
-    }
 }
 

@@ -1,7 +1,6 @@
 package com.subway.portalConfigDetail;
 
 
-import com.subway.location.Location;
 import com.subway.portalConfig.PortalConfig;
 import lombok.Data;
 
