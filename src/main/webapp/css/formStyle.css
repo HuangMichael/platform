@@ -22,3 +22,9 @@ body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, span, ul, .option
 .expired {
     font-color: red;
 }
+
+.portalChart {
+
+    min-height: 320px;
+
+}

@@ -21,13 +21,13 @@
                     <%@include file="../common/common-breadcrumb.jsp" %>
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="chart1" style="height:350px;width: 90%"></div>
+                            <div id="chart1" class='portalChart'></div>
                         </div>
                         <div class="col-md-6">
-                            <div id="chart3" style="height:300px;width: 90%"></div>
+                            <div id="chart3" class='portalChart'></div>
                         </div>
                         <div class="col-md-12">
-                            <div id="chart2" style="height:300px;width: 90%"></div>
+                            <div id="chart2" class='portalChart'></div>
                         </div>
                         <div class="col-md-12">
                             <div  style="float:right; ">Copyright ©2018甘肃惠腾科技有限公司 版权所有.</div>

@@ -31,15 +31,14 @@
             <div class="form-group">
                 <label for="status" class="col-md-2 control-label">状态</label>
                 <div class="col-md-4">
-                    <select class="form-control" id="status" v-model="portalConfigDetail.status" style="width:100%">
+                    <select class="form-control" id="status" name ="status" v-model="portalConfigDetail.status" style="width:100%">
                         <option value="1" selected>有效</option>
                         <option value="0">无效</option>
                     </select>
                 </div>
-                <label for="portalConfig_id" class="col-md-2 control-label">门户配置id</label>
+                <label for="portalConfig_id" class="col-md-2 control-label">所属门户</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="portalConfig_id" name="portalConfig.id"
-                           v-model="portalConfigDetail.portalConfig.id" required/>
+                    <input class="form-control" id="portalConfig_id" name="portalConfig.id" v-model="portalConfigDetail.portalConfig.id" required/>
                 </div>
             </div>
         </div>

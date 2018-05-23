@@ -4,6 +4,7 @@ package com.subway.role;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.subway.domain.app.resoure.Resource;
 import com.subway.domain.user.User;
+import com.subway.portalConfig.PortalConfig;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Role {
     private String roleDesc;
     @Column(scale = 1000)
     private long sortNo;
+
     @Column(nullable = false, length = 1, columnDefinition = "default 1")
     private String status;
 
@@ -36,9 +38,16 @@ public class Role {
     @JoinTable(name = "t_role_user", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "user_id")})
     private Set<User> userSet;
 
+
     @JsonBackReference
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "t_role_resource", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "resource_id")})
     private List<Resource> resourceList;
+
+
+    @JsonBackReference
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "t_role_portal", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "portal_id")})
+    private List<PortalConfig> portalList;
 }
 

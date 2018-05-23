@@ -34,8 +34,12 @@ public class UserLogController extends BaseController {
 
     @Autowired
     ResourceService resourceService;
+
+
     @Autowired
     UserLogService userLogService;
+
+
     @Autowired
     UserLogSearchService userLogSearchService;
 
